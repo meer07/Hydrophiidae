@@ -1,0 +1,41 @@
+
+{% extends "layout.html" %}
+{% block head %}
+<link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}" type="text/css"/>
+{% endblock %}
+{% block body %}
+<div class="row text-left" id="editor_body">
+    <div id="editor" style="height: 100%; width: 100%"></div>
+        <script src="../static/ace/src-min-noconflict/ace.js" type="text/javascript" charset="utf-8"></script>
+        <script>
+            var editor = ace.edit("editor");
+            editor.setTheme("ace/theme/twilight");
+            editor.getSession().setMode("ace/mode/python");
+
+            function runScript(){
+                var script = editor.getValue();
+
+                $.ajax({
+                    type:'POST',
+                    dataType:'json',
+                    url:'/run',
+                    data:{"script":script},
+                    success:function(data){
+                        console.log(data.result);
+                        $("#out_put").text(data.result);
+                    },
+                    error: function(xhr, textStatus, error){
+                        alert("通信に失敗しました");
+                    }
+                });
+            }
+        </script>
+    </div>
+</div>
+<div id="output" class="row">
+    <div class="panel panel-default text-left" style="height: 100%; width: 100%">
+          <div class="panel-heading"><button type="button" class="btn btn-default" onClick="runScript()">実行</button></div>
+          <div class="panel-body"><pre id="out_put"></pre></div>
+    </div>
+</div>
+{% endblock %}

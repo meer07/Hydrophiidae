@@ -1,0 +1,39 @@
+body{
+    height: 100%;
+    padding-top: 50px;
+}
+
+#editor_body{
+    height: 70%;
+}
+
+#output{
+    height: 30%;
+}
+
+#top{
+    background-color: #181818;
+    margin-bottom: 120px;
+    height: 500px;
+    padding: 64px;
+}
+
+#middle{
+    margin-bottom: 60px;
+}
+
+#head{
+    margin-top: 100px;
+}
+
+.featurette-image{
+    margin: 0 -15px;
+}
+
+.featurette-heading {
+    margin-top: 120px;
+}
+
+.featurette-divider{
+    margin: 80px 0;
+}

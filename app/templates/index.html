@@ -1,0 +1,91 @@
+{% extends "layout.html" %}
+{% block head %}
+<link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}" type="text/css"/>
+{% endblock %}
+{% block body %}
+<section id="top">
+<div class="container">
+    <div clss="row">
+        <div id="head" class="col-xs-6">
+            <h2>ブラウザ１つでpythonプログラミング!!</h2>
+            <p>Hydrophiidaeはブラウザ１つでpythonプログラミングが始められる。</p><p>オンラインpythonエディタです。</p>
+            <a href="" class="btn btn-lg btn-success" role="button">今すぐ始める</a>
+        </div>
+        <div class="col-xs-6">
+            <img src="{{ url_for('static', filename='image/MiniLapTop.png') }}" style="width: 640px; height: 424px;">
+        </div>
+    </div>
+</div>
+</section>
+<section id="middle">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-4">
+              <img src="{{ url_for('static', filename='image/Q.png') }}">
+              <h2>Hydrophiidaeとは?</h2>
+              <p>
+              Hydrophiidaeとはブラウザ上でpythonのコードを編集・実行できるオンラインpythonエディタです。ちょっとpython触ってみたいなと思ったときや試したいコードをサッと書くのに非常に便利です。
+              </p>
+            </div><!-- /.col-lg-4 -->
+            <div class="col-lg-4">
+              <img src="{{ url_for('static', filename='image/python.png') }}" style="width: 140px; height: 140px;">
+              <h2>pythonとは?</h2>
+              <p>
+              pythonとは1991年にグイド・ヴァンロッサムによって開発されたプログラミング言語です。学習コストが低く、可読性、保守性に優れた言語です。
+              デスクトップアプリから学術用途のプログラム、そして、<a href="http://www.softbank.jp/robot/special/tech/">あの話題のロボットの制御まで</a>幅広く利用されている人気の言語です。
+              </p>
+            </div><!-- /.col-lg-4 -->
+            <div class="col-lg-4">
+              <img src="{{ url_for('static', filename='image/wakaba.png') }}" style="width: 160px; height: 140px;">
+              <h2>プログラミング初学者にオススメ!!</h2>
+              <p>
+              環境構築する手間なしで始められるのでプログラミングを始めてみたいなあと思っているけど環境構築するの面倒だなあと思っている人に非常にオススメです。
+              また、とてもシンプルなので開発環境の使い方を覚える必要が無く、学習コストを極限にまで抑えることが可能です。
+              </p>
+            </div><!-- /.col-lg-4 -->
+        </div><!-- /.row -->
+    </div>
+</section>
+<section>
+<div class="container">
+    <hr class="featurette-divider">
+    <div class="row featurette">
+        <div class="col-md-7">
+          <h2 class="featurette-heading">First featurette heading. <span class="text-muted">It'll blow your mind.</span></h2>
+          <p class="lead">Donec ullamcorper nulla non metus auctor fringilla. Vestibulum id ligula porta felis euismod semper. Praesent commodo cursus magna, vel scelerisque nisl consectetur. Fusce dapibus, tellus ac cursus commodo.</p>
+        </div>
+        <div class="col-md-5">
+          <img class="featurette-image img-responsive" data-src="holder.js/500x500/auto" alt="Generic placeholder image">
+        </div>
+      </div>
+
+      <hr class="featurette-divider">
+      <div class="row featurette">
+        <div class="col-md-5">
+          <img class="featurette-image img-responsive" data-src="holder.js/500x500/auto" alt="Generic placeholder image">
+        </div>
+        <div class="col-md-7">
+          <h2 class="featurette-heading">Oh yeah, it's that good. <span class="text-muted">See for yourself.</span></h2>
+          <p class="lead">Donec ullamcorper nulla non metus auctor fringilla. Vestibulum id ligula porta felis euismod semper. Praesent commodo cursus magna, vel scelerisque nisl consectetur. Fusce dapibus, tellus ac cursus commodo.</p>
+        </div>
+      </div>
+
+      <hr class="featurette-divider">
+      <div class="row featurette">
+        <div class="col-md-7">
+          <h2 class="featurette-heading">And lastly, this one. <span class="text-muted">Checkmate.</span></h2>
+          <p class="lead">Donec ullamcorper nulla non metus auctor fringilla. Vestibulum id ligula porta felis euismod semper. Praesent commodo cursus magna, vel scelerisque nisl consectetur. Fusce dapibus, tellus ac cursus commodo.</p>
+        </div>
+        <div class="col-md-5">
+          <img class="featurette-image img-responsive" data-src="holder.js/500x500/auto" alt="Generic placeholder image">
+        </div>
+      </div>
+
+      <hr class="featurette-divider">
+      <footer>
+            <p class="pull-right"><a href="#">Back to top</a></p>
+            <p>&copy; 2014 Company, Inc. &middot; <a href="#">Privacy</a> &middot; <a href="#">Terms</a></p>
+      </footer>
+</div>
+</section>
+{% endblock %}
