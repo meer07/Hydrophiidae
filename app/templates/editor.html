@@ -31,27 +31,35 @@
             }
 
             function downloadFile(){
+                var script = editor.getValue();
                 var filename = 'test';
-                $.ajax({
-                    type:'POST',
-                    dataType:'json',
-                    url:'/run',
-                    data:{"script":script},
-                    success:function(data){
-                        console.log(data.result);
-                        $("#out_put").text(data.result);
-                    },
-                    error: function(xhr, textStatus, error){
-                        alert("通信に失敗しました");
-                    }
-                });
+
+                var form = document.createElement("form");
+                var s_input = document.createElement("input");
+                var f_input = document.createElement("input");
+
+                form.action = '../download';
+                form.method = 'post';
+
+                s_input.type = 'hidden';
+                s_input.name = 'script';
+                s_input.value = script;
+
+                f_input.type = 'hidden';
+                f_input.name = 'file_name';
+                f_input.value = filename;
+
+                form.appendChild(s_input);
+                form.appendChild(f_input);
+                form.submit();
             }
         </script>
     </div>
 </div>
 <div id="output" class="row">
     <div class="panel panel-default text-left" style="height: 100%; width: 100%">
-          <div class="panel-heading"><button type="button" class="btn btn-default" onClick="runScript()">実行</button><button type="button" class="btn btn-default" onClick="downloadFile()">スクリプトダウンロード</button></div>
+          <div class="panel-heading"><button type="button" class="btn btn-default" onClick="runScript()">実行</button>
+              <button type="button" class="btn btn-default" onClick="downloadFile()">スクリプトダウンロード</button></div>
           <pre class="panel-body" id="out_put"></pre>
     </div>
 </div>
