@@ -3,6 +3,7 @@ __author__ = '708kaige'
 
 from flask import Flask, render_template,request
 from interpreter import interpreter
+from download_script import download_script
 app = Flask(__name__)
 
 @app.route('/')
@@ -19,6 +20,12 @@ def run_python_code():
     inter_preter = interpreter()
     result = inter_preter.call_python(script_text)
     return result
+
+@app.route('/download',methods=['POST'])
+def download_file():
+    script_text = request.form['script']
+    file_name = request.form['file_name']
+    return download_script.make_file(script_text,file_name)
 
 if __name__ == '__main__':
     app.run()
