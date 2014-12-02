@@ -6,7 +6,7 @@
 {% block body %}
 <div class="row text-left" id="editor_body">
     <div id="editor" style="height: 100%; width: 100%"></div>
-        <script src="../static/ace/src-min-noconflict/ace.js" type="text/javascript" charset="utf-8"></script>
+        <script src="{{ url_for('static', filename='ace/src/ace.js')}}" type="text/javascript" charset="utf-8"></script>
         <script>
             var editor = ace.edit("editor");
             editor.setTheme("ace/theme/twilight");
@@ -32,26 +32,30 @@
 
             function downloadFile(){
                 var script = editor.getValue();
-                var filename = 'test';
+                var filename = window.prompt("ファイル名を入力してください", "");
 
-                var form = document.createElement("form");
-                var s_input = document.createElement("input");
-                var f_input = document.createElement("input");
+                if(filename){
+                    var form = document.createElement("form");
+                    var s_input = document.createElement("input");
+                    var f_input = document.createElement("input");
 
-                form.action = '../download';
-                form.method = 'post';
+                    form.action = '../download';
+                    form.method = 'post';
 
-                s_input.type = 'hidden';
-                s_input.name = 'script';
-                s_input.value = script;
+                    s_input.type = 'hidden';
+                    s_input.name = 'script';
+                    s_input.value = script;
 
-                f_input.type = 'hidden';
-                f_input.name = 'file_name';
-                f_input.value = filename;
+                    f_input.type = 'hidden';
+                    f_input.name = 'file_name';
+                    f_input.value = filename;
 
-                form.appendChild(s_input);
-                form.appendChild(f_input);
-                form.submit();
+                    form.appendChild(s_input);
+                    form.appendChild(f_input);
+                    form.submit();
+                }else{
+                    alert("ファイル名が入力されていません");
+                }
             }
         </script>
     </div>
@@ -60,7 +64,7 @@
     <div class="panel panel-default text-left" style="height: 100%; width: 100%">
           <div class="panel-heading"><button type="button" class="btn btn-default" onClick="runScript()">実行</button>
               <button type="button" class="btn btn-default" onClick="downloadFile()">スクリプトダウンロード</button></div>
-          <pre class="panel-body" id="out_put"></pre>
+          <div class="panel-body"><pre id="out_put" class="pre-scrollable"></pre></div>
     </div>
 </div>
 {% endblock %}

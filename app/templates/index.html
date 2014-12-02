@@ -5,11 +5,11 @@
 {% block body %}
 <section id="top">
 <div class="container">
-    <div clss="row">
+    <div clss="row　jumbotron">
         <div id="head" class="col-xs-6">
             <h2>ブラウザ１つでpythonプログラミング!!</h2>
             <p>Hydrophiidaeはブラウザ１つでpythonプログラミングが始められる。</p><p>オンラインpythonエディタです。</p>
-            <a href="" class="btn btn-lg btn-success" role="button">今すぐ始める</a>
+            <a href="./editor" class="btn btn-lg btn-success" role="button">今すぐ始める</a>
         </div>
         <div class="col-xs-6">
             <img src="{{ url_for('static', filename='image/MiniLapTop.png') }}" style="width: 640px; height: 424px;">
@@ -46,45 +46,45 @@
         </div><!-- /.row -->
     </div>
 </section>
-<section>
+<section id="about">
 <div class="container">
     <hr class="featurette-divider">
-    <div class="row featurette">
+    <div class="row featurette" >
         <div class="col-md-7">
-          <h2 class="featurette-heading">First featurette heading. <span class="text-muted">It'll blow your mind.</span></h2>
-          <p class="lead">Donec ullamcorper nulla non metus auctor fringilla. Vestibulum id ligula porta felis euismod semper. Praesent commodo cursus magna, vel scelerisque nisl consectetur. Fusce dapibus, tellus ac cursus commodo.</p>
+          <h2 class="featurette-heading">操作は簡単!!コードを入力して実行するだけ</h2>
+          <p class="lead">使い方は簡単。エディタ内にコードを打ち込み、実行ボタンを押すだけ。複雑な操作は一切無いので学習に集中できます。</p>
         </div>
         <div class="col-md-5">
-          <img class="featurette-image img-responsive" data-src="holder.js/500x500/auto" alt="Generic placeholder image">
+          <img class="featurette-image img-responsive" src="{{ url_for('static', filename='image/about.png') }}" alt="Generic placeholder image">
         </div>
       </div>
 
       <hr class="featurette-divider">
       <div class="row featurette">
         <div class="col-md-5">
-          <img class="featurette-image img-responsive" data-src="holder.js/500x500/auto" alt="Generic placeholder image">
+          <img class="featurette-image img-responsive" src="{{ url_for('static', filename='image/download.png') }}" alt="Generic placeholder image">
         </div>
         <div class="col-md-7">
-          <h2 class="featurette-heading">Oh yeah, it's that good. <span class="text-muted">See for yourself.</span></h2>
-          <p class="lead">Donec ullamcorper nulla non metus auctor fringilla. Vestibulum id ligula porta felis euismod semper. Praesent commodo cursus magna, vel scelerisque nisl consectetur. Fusce dapibus, tellus ac cursus commodo.</p>
+          <h2 class="featurette-heading">ファイル保存機能搭載</h2>
+          <p class="lead">打ち込んだコードはスクリプトダウンロードボタンで自分のPCに保存ができます。保存したファイルはpythonの実行環境があればそのまま実行することができます。</p>
         </div>
       </div>
 
       <hr class="featurette-divider">
       <div class="row featurette">
         <div class="col-md-7">
-          <h2 class="featurette-heading">And lastly, this one. <span class="text-muted">Checkmate.</span></h2>
-          <p class="lead">Donec ullamcorper nulla non metus auctor fringilla. Vestibulum id ligula porta felis euismod semper. Praesent commodo cursus magna, vel scelerisque nisl consectetur. Fusce dapibus, tellus ac cursus commodo.</p>
+          <h2 class="featurette-heading">シンタックスハイライト搭載</h2>
+          <p class="lead">メソッドや変数が色分けされているのでコードが非常に見やすくなっています。</p>
         </div>
         <div class="col-md-5">
-          <img class="featurette-image img-responsive" data-src="holder.js/500x500/auto" alt="Generic placeholder image">
+          <img class="featurette-image img-responsive" src="{{ url_for('static', filename='image/syntax.png') }}" alt="Generic placeholder image">
         </div>
       </div>
 
       <hr class="featurette-divider">
       <footer>
             <p class="pull-right"><a href="#">Back to top</a></p>
-            <p>&copy; 2014 Company, Inc. &middot; <a href="#">Privacy</a> &middot; <a href="#">Terms</a></p>
+            <p>&copy; 2014 Hydrophiidae.</p>
       </footer>
 </div>
 </section>

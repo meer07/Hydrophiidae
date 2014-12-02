@@ -47,4 +47,5 @@ def read_file(file_name):
     return r
 
 if __name__ == '__main__':
-    app.run(debug=True)
+    app = Flask(__name__)
+    app.config['DEBUG'] = True
